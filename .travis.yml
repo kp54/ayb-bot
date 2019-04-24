@@ -1,0 +1,4 @@
+language: go
+script:
+  - dep ensure
+  - go build
