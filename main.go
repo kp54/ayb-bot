@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"os"
+
+	_ "github.com/joho/godotenv/autoload"
+)
 
 func main() {
-	fmt.Print("Hello, world!")
+	token := os.Getenv("AYB_BOT_AUTHORIZATION_TOKEN")
+	if token == "" {
+		log.Fatal("env AYB_BOT_AUTHORIZATION_TOKEN not defined")
+	}
+	fmt.Println(token)
 }
