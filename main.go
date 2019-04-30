@@ -4,6 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
+	"os"
+
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func loadNotes(filename string) ([]string, error) {
@@ -24,5 +28,9 @@ func loadNotes(filename string) ([]string, error) {
 }
 
 func main() {
-	fmt.Print("Hello, world!")
+	token := os.Getenv("AYB_BOT_AUTHORIZATION_TOKEN")
+	if token == "" {
+		log.Fatal("env AYB_BOT_AUTHORIZATION_TOKEN not defined")
+	}
+	fmt.Println(token)
 }
