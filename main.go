@@ -10,6 +10,10 @@ import (
 	_ "github.com/joho/godotenv/autoload"
 )
 
+type Note struct {
+	Text string `json:"text"`
+}
+
 func loadNotes(filename string) ([]string, error) {
 	var (
 		err   error
@@ -25,6 +29,12 @@ func loadNotes(filename string) ([]string, error) {
 	}
 
 	return notes, nil
+}
+
+func constructNote(text string) Note {
+	return Note{
+		Text: text,
+	}
 }
 
 func main() {
