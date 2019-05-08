@@ -92,5 +92,22 @@ func main() {
 	if token == "" {
 		log.Fatal("env AYB_BOT_AUTHORIZATION_TOKEN not defined")
 	}
-	fmt.Println(token)
+	baseURL := os.Getenv("AYB_BOT_BASE_URL")
+	if baseURL == "" {
+		log.Fatal("env AYB_BOT_BASE_URL not defined")
+	}
+
+	rand.Seed(time.Now().UnixNano())
+	notes, err := loadNotes("notes.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	rand.Shuffle(len(notes), func(i, j int) {
+		notes[i], notes[j] = notes[j], notes[i]
+	})
+
+	fmt.Println("Initialization Finished")
+
+	note := constructNote(notes[0])
+	postNote(note)
 }
