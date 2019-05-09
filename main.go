@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os"
 	"runtime"
+	"strconv"
 	"time"
 
 	"github.com/carlescere/scheduler"
@@ -98,6 +99,14 @@ func main() {
 	if baseURL == "" {
 		log.Fatal("env AYB_BOT_BASE_URL not defined")
 	}
+	dur := os.Getenv("AYB_BOT_POST_DURATION")
+	if dur == "" {
+		log.Fatal("env AYB_BOT_POST_DURATION not defined")
+	}
+	durI, err := strconv.Atoi(dur)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	rand.Seed(time.Now().UnixNano())
 	notes, err := loadNotes("notes.json")
@@ -111,7 +120,7 @@ func main() {
 	fmt.Println("Initialization Finished")
 
 	index := 0
-	scheduler.Every(23).Minutes().Run(func() {
+	scheduler.Every(time.Duration(durI)).Minutes().Run(func() {
 		note := constructNote(notes[index])
 		resp, err := postNote(note)
 		if err != nil {
