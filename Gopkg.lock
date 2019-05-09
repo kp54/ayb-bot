@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:5f80f31b983ad0f7dc869fe1b5107e6dd5d39227ace0336e092f8511725dd928"
+  name = "github.com/carlescere/scheduler"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ddcf6a6be3e8bd4b480f96031d9e1f3abecf2767"
+  version = "0.1"
+
+[[projects]]
   digest = "1:1f4b55d7c57681ad91b7ce3ac7c8e7b139e6dd2f477c5f87e6a7749d298645dc"
   name = "github.com/joho/godotenv"
   packages = [
@@ -15,6 +23,9 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["github.com/joho/godotenv/autoload"]
+  input-imports = [
+    "github.com/carlescere/scheduler",
+    "github.com/joho/godotenv/autoload",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
