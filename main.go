@@ -68,7 +68,7 @@ func postNote(note Note) ([]byte, error) {
 	}
 
 	joinAuthorization(&payload)
-	fmt.Println(util.PrettyFormatJSON(payload))
+	fmt.Println("payload: " + string(payload))
 
 	baseURL := os.Getenv("AYB_BOT_BASE_URL")
 	destURL, err := util.JoinBaseAndPath(baseURL, "notes/create")
@@ -126,7 +126,7 @@ func main() {
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println(util.PrettyFormatJSON(resp))
+		fmt.Println("response: " + string(resp))
 
 		if index++; len(notes) == index {
 			index = 0
