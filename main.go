@@ -9,8 +9,10 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"runtime"
 	"time"
 
+	"github.com/carlescere/scheduler"
 	"github.com/kp54/ayb-bot/util"
 
 	_ "github.com/joho/godotenv/autoload"
@@ -108,6 +110,18 @@ func main() {
 
 	fmt.Println("Initialization Finished")
 
-	note := constructNote(notes[0])
-	postNote(note)
+	index := 0
+	scheduler.Every(23).Minutes().Run(func() {
+		note := constructNote(notes[index])
+		resp, err := postNote(note)
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println(util.PrettyFormatJSON(resp))
+
+		if index++; len(notes) == index {
+			index = 0
+		}
+	})
+	runtime.Goexit()
 }
