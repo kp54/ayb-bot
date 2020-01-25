@@ -1,0 +1,58 @@
+# InlineObject22
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Announcements** | Pointer to [**[]map[string]interface{}**](map[string]interface{}.md) | お知らせ | [optional] 
+**DisableRegistration** | Pointer to **bool** | 招待制か否か | [optional] 
+**DisableLocalTimeline** | Pointer to **bool** | ローカルタイムライン(とソーシャルタイムライン)を無効にするか否か | [optional] 
+**DisableGlobalTimeline** | Pointer to **bool** | グローバルタイムラインを無効にするか否か | [optional] 
+**ProtectLocalOnlyNotes** | Pointer to **bool** | 公開範囲がローカルのみの投稿をActivityPub経由以外からも保護するか否か | [optional] 
+**EnableEmojiReaction** | Pointer to **bool** | 絵文字リアクションを有効にするか否か | [optional] 
+**UseStarForReactionFallback** | Pointer to **bool** | 不明なリアクションのフォールバックに star リアクションを使うか | [optional] 
+**HidedTags** | Pointer to **[]string** | 統計などで無視するハッシュタグ | [optional] 
+**MascotImageUrl** | Pointer to **string** | インスタンスキャラクター画像のURL | [optional] 
+**BannerUrl** | Pointer to **string** | インスタンスのバナー画像URL | [optional] 
+**ErrorImageUrl** | Pointer to **string** | インスタンスのエラー画像URL | [optional] 
+**IconUrl** | Pointer to **string** | インスタンスのアイコンURL | [optional] 
+**Name** | Pointer to **string** | インスタンス名 | [optional] 
+**Description** | Pointer to **string** | インスタンスの紹介文 | [optional] 
+**MaxNoteTextLength** | **float32** | 投稿の最大文字数 | [optional] 
+**LocalDriveCapacityMb** | **float32** | ローカルユーザーひとりあたりのドライブ容量 (メガバイト単位) | [optional] 
+**RemoteDriveCapacityMb** | **float32** | リモートユーザーひとりあたりのドライブ容量 (メガバイト単位) | [optional] 
+**CacheRemoteFiles** | **bool** | リモートのファイルをキャッシュするか否か | [optional] 
+**EnableRecaptcha** | **bool** | reCAPTCHAを使用するか否か | [optional] 
+**RecaptchaSiteKey** | Pointer to **string** | reCAPTCHA site key | [optional] 
+**RecaptchaSecretKey** | Pointer to **string** | reCAPTCHA secret key | [optional] 
+**ProxyAccount** | Pointer to **string** | プロキシアカウントのユーザー名 | [optional] 
+**MaintainerName** | **string** | インスタンスの管理者名 | [optional] 
+**MaintainerEmail** | Pointer to **string** | インスタンス管理者の連絡先メールアドレス | [optional] 
+**Langs** | **[]string** | インスタンスの対象言語 | [optional] 
+**SummalyProxy** | Pointer to **string** | summalyプロキシURL | [optional] 
+**EnableTwitterIntegration** | **bool** | Twitter連携機能を有効にするか否か | [optional] 
+**TwitterConsumerKey** | Pointer to **string** | TwitterアプリのConsumer key | [optional] 
+**TwitterConsumerSecret** | Pointer to **string** | TwitterアプリのConsumer secret | [optional] 
+**EnableGithubIntegration** | **bool** | GitHub連携機能を有効にするか否か | [optional] 
+**GithubClientId** | Pointer to **string** | GitHubアプリのClient ID | [optional] 
+**GithubClientSecret** | Pointer to **string** | GitHubアプリのClient Secret | [optional] 
+**EnableDiscordIntegration** | **bool** | Discord連携機能を有効にするか否か | [optional] 
+**DiscordClientId** | Pointer to **string** | DiscordアプリのClient ID | [optional] 
+**DiscordClientSecret** | Pointer to **string** | DiscordアプリのClient Secret | [optional] 
+**EnableExternalUserRecommendation** | **bool** | 外部ユーザーレコメンデーションを有効にする | [optional] 
+**ExternalUserRecommendationEngine** | Pointer to **string** | 外部ユーザーレコメンデーションのサードパーティエンジン | [optional] 
+**ExternalUserRecommendationTimeout** | Pointer to **float32** | 外部ユーザーレコメンデーションのタイムアウト (ミリ秒) | [optional] 
+**EnableEmail** | **bool** | メール配信を有効にするか否か | [optional] 
+**Email** | Pointer to **string** | メール配信する際に利用するメールアドレス | [optional] 
+**SmtpSecure** | **bool** | SMTPサーバがSSLを使用しているか否か | [optional] 
+**SmtpHost** | Pointer to **string** | SMTPサーバのホスト | [optional] 
+**SmtpPort** | Pointer to **float32** | SMTPサーバのポート | [optional] 
+**SmtpUser** | Pointer to **string** | SMTPサーバのユーザー名 | [optional] 
+**SmtpPass** | Pointer to **string** | SMTPサーバのパスワード | [optional] 
+**EnableServiceWorker** | **bool** | ServiceWorkerを有効にするか否か | [optional] 
+**SwPublicKey** | Pointer to **string** | ServiceWorkerのVAPIDキーペアの公開鍵 | [optional] 
+**SwPrivateKey** | Pointer to **string** | ServiceWorkerのVAPIDキーペアの秘密鍵 | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
